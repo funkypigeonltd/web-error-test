@@ -4,7 +4,11 @@ export function generateStaticParams() {
   return [{ locale: "uk" }, { locale: "ie" }];
 }
 
-export default function Page({ params }: { params: { locale: string } }) {
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export default async function Page({ params }: { params: { locale: string } }) {
+  await sleep(1000);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1 className="text-4xl">Balloons  - locale: {params.locale}</h1>

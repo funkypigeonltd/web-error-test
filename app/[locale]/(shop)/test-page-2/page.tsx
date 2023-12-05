@@ -11,26 +11,19 @@ export default function Page({ params }: { params: { locale: string } }) {
 
       <nav className="flex-grow mt-5">
         <ul>
-          <li className="text-center">
-            <Link href="/">Home</Link>
-          </li>
           <li className="mt-3 text-center">
-            <Link href="/test-page-1">Test Page 1</Link>
-          </li>
-          <li className="mt-3 text-center">
-            {params.locale === "uk" ? (
-              <span className="underline">Test Page 2 (UK)</span>
-            ): (
+            {params.locale !== "uk" && (
               <Link href="/uk/test-page-2">Test Page 2 (UK)</Link>
             )}
           </li>
           <li className="mt-3 text-center">
-            {params.locale === "ie" ? (
-              <span className="underline">Test Page 2 (IE)</span>
-            ): (
+            {params.locale !== "ie" && (
               <Link href="/ie/test-page-2">Test Page 2 (IE)</Link>
             )}
-            
+          </li>
+
+          <li className="text-center">
+            <Link href="/">Back To Home</Link>
           </li>
         </ul>
       </nav>

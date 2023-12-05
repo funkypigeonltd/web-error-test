@@ -19,6 +19,32 @@ export default function Home() {
           <li className="mt-3 text-center">
             <Link href="/ie/test-page-2">Test Page 2 (IE)</Link>
           </li>
+          <li className="mt-3 text-center">
+            <Link href="/uk/gifts/balloons">Balloons (UK)</Link>
+          </li>
+          <li className="mt-3 text-center">
+            <Link href="/ie/gifts/balloons">Balloons (IE)</Link>
+          </li>
+          <li className="mt-3 text-center">
+            <Link href="/uk/gifts/birthday">Birthday (UK)</Link>
+          </li>
+          <li className="mt-3 text-center">
+            <Link href="/ie/gifts/birthday">Birthday (IE)</Link>
+          </li>
+
+          <li className="mt-3 text-center">
+            <Link href="/uk/gifts/random-category">Random Category (UK)</Link>
+          </li>
+          <li className="mt-3 text-center">
+            <Link href="/ie/gifts/random-category">Random Category (IE)</Link>
+          </li>
+
+          <li className="mt-3 text-center">
+            <Link href="/uk/gifts/level-one/level-two">Multi Level Category (UK)</Link>
+          </li>
+          <li className="mt-3 text-center">
+            <Link href="/ie/gifts/level-one/level-two">Multi Level Category (IE)</Link>
+          </li>
         </ul>
       </nav>
     </main>

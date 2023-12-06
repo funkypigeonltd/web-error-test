@@ -1,24 +1,34 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
-export function generateMetadata({ params, searchParams }: { params: { locale: string }; searchParams: { [key: string]: string | string[] | undefined } }): Metadata {
-  console.log('balloons generateMetadata', { params, searchParams });
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  let index = true;
-  if (searchParams) {
-    if (searchParams.query && searchParams.query.length > 0) {
-      index = false;
+export async function generateMetadata({ params, searchParams }: { params: { locale: string }; searchParams: { [key: string]: string | string[] | undefined } }): Promise<Metadata> {
+  try {
+    console.log('balloons generateMetadata', { params, searchParams });
+
+    await sleep(1000);
+
+    let index = true;
+    if (searchParams) {
+      if (searchParams.query && searchParams.query.length > 0) {
+        index = false;
+      }
     }
-  }
 
-  return {};
+    return {};
+  } catch (err) {
+    console.error(err);
+    return {};
+  }
+  
 }
 
 export function generateStaticParams() {
   return [{ locale: "uk" }, { locale: "ie" }];
 }
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 
 export default async function Page({ params }: { params: { locale: string } }) {
   await sleep(1000);

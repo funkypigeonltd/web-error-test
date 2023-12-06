@@ -1,4 +1,18 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export function generateMetadata({ params, searchParams }: { params: { locale: string }; searchParams: { [key: string]: string | string[] | undefined } }): Metadata {
+  console.log('balloons generateMetadata', { params, searchParams });
+
+  let index = true;
+  if (searchParams) {
+    if (searchParams.query && searchParams.query.length > 0) {
+      index = false;
+    }
+  }
+
+  return {};
+}
 
 export function generateStaticParams() {
   return [{ locale: "uk" }, { locale: "ie" }];
